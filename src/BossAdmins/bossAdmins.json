@@ -1,0 +1,16 @@
+{
+    "BossAdmins" : [
+        {
+            "name" : "Carlos",
+            "lastName" : "Perez",
+            "password" : "Malomalo23",
+            "email" : "tamosbienperro23@gmail.com"
+        },
+        {
+            "name" : "Daniel",
+            "lastName" : "Palacios",
+            "password" : "danielPalacios23",
+            "email" : "djkmecdgm65@gmail.com"
+        }
+    ]
+}
