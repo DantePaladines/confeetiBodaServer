@@ -33,8 +33,8 @@ const io = new Server(serverUno, {
 })
 
 Conexion(io)
-//CreateBossUserAdmin(firstUser)
-CreateBossUserAdmin(secondUser)
+CreateBossUserAdmin(firstUser)
+//CreateBossUserAdmin(secondUser)
 .then((res) => {
     console.log(res)
 })
