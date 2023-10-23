@@ -44,7 +44,8 @@ const LoginBossAdmin = async (req, res) => {
                     res.cookie("RefreshTokenBossAdmin", Refreshtoken, {
                         httpOnly : true, // solo vive en el intercambio de datos, no puede ser accedido en el front
                         expires : new Date(Date.now() + expiresInRefresh * 1000),
-                        secure: true
+                        secure: true,
+                        sameSite: 'none'
                     })
 
                     res.status(200).json({
