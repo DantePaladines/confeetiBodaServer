@@ -22,14 +22,14 @@ const local = 'http://localhost:3000'
 const deploy = 'https://confeeti-boda-client.vercel.app'
 
 server.use(cors({
-    origin: deploy,
+    origin: 'https://confeeti-boda-client.vercel.app',
     methods: ["POST", "GET", "PUT", "DELETE"],
     credentials: true
 }));
 
 const io = new Server(serverUno, {
     cors : {
-        origin: deploy,
+        origin: 'https://confeeti-boda-client.vercel.app',
         methods: ["POST", "GET", "PUT", "DELETE"],
         credentials: true
     }
