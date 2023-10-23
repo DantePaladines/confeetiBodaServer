@@ -19,7 +19,7 @@ server.use(morgan("dev"))
 server.use(cookieParser())
 
 const local = 'http://localhost:3000'
-const deploy = 'https://confeeti-boda-client.vercel.app/'
+const deploy = 'https://confeeti-boda-client.vercel.app'
 
 server.use(cors({
     origin: deploy,
