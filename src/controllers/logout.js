@@ -1,4 +1,3 @@
-
 const Logout = (req, res) => {
     try {
 
@@ -6,7 +5,7 @@ const Logout = (req, res) => {
         res.json("Sesion Cerrada")
         
     } catch (error) {
-        console.log(error.message)
+        res.status(500).json(error.message)
     }
 }
 
