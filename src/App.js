@@ -18,15 +18,18 @@ server.use(morgan("dev"))
 
 server.use(cookieParser())
 
+const local = 'http://localhost:3000'
+const deploy = 'https://confeeti-boda-client.vercel.app/'
+
 server.use(cors({
-    origin: "http://localhost:3000",
+    origin: deploy,
     methods: ["POST", "GET", "PUT", "DELETE"],
     credentials: true
 }));
 
 const io = new Server(serverUno, {
     cors : {
-        origin: "http://localhost:3000",
+        origin: deploy,
         methods: ["POST", "GET", "PUT", "DELETE"],
         credentials: true
     }
