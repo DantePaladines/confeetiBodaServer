@@ -44,7 +44,8 @@ const LoginAdmin = async (req, res) => {
 
                     res.cookie("RefreshToken", Refreshtoken, {
                         httpOnly : true, // solo vive en el intercambio de datos, no puede ser accedido en el front
-                        expires : new Date(Date.now() + expiresInRefresh * 1000)
+                        expires : new Date(Date.now() + expiresInRefresh * 1000),
+                        secure: true
                     })
 
                     res.status(200).json({
