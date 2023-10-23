@@ -1,21 +1,47 @@
 const {Sequelize} = require("sequelize")
-require("dotenv").config()
 const fs = require('fs');
 const path = require('path');
 
-
-const { DB_USER, DB_PASSWORD, DB_HOST, DB_NAME } = process.env
-
+const { development, production } = require("./config/configDataBase")
 //const sequelize = new Sequelize( `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/eventoboda` , {
 //  logging: false, // set to console.log to see the raw SQL queries
 //  native: false, // lets Sequelize know we can use pg-native for ~30% more speed
 //})
 
-const sequelize = new Sequelize(DB_NAME, DB_USER, DB_PASSWORD, {
-  host : DB_HOST,
-  dialect : "mysql",
-  port : 3306
+//const sequelize = new Sequelize(DB_NAME, DB_USER, DB_PASSWORD, {
+//  host : DB_HOST,
+//  dialect : "mysql",
+//  port : 3306
+//})
+
+//const sequelize = new Sequelize('confeeti_eventoboda', 'confeeti_wendding', '7506Mub$', {
+//  host: 'localhost',  // or host: '127.0.0.1'
+//  dialect : "mysql",
+//  operatorAlias:false,
+//  logging:false,
+//  port : 3306,
+//  set : "utf8"
+//})
+
+const sequelize = new Sequelize({
+  database : production.dbName || development.dbName,
+  username : production.user || development.user,
+  password : production.password || development.password,
+  host: production.host || development.host,
+  dialect : production.dialect || development.dialect,
+  port : production.port || development.port,
 })
+
+//wepanel_confeeti
+
+//const sequelize = new Sequelize({
+//  dialect: 'mysql',
+//  host: 'localhost',
+//  username: 'confeeti_wendding',
+//  password: '7506Mub$',
+//  database: 'confeeti_eventoboda',
+//  logging: false,
+//});
 
 const basename = path.basename(__filename);
 
