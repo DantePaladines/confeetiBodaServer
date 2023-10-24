@@ -1,7 +1,9 @@
 const LogoutBossAdmin = (req, res) => {
     try {
 
-        res.clearCookie("RefreshTokenBossAdmin")
+        res.clearCookie("RefreshTokenBossAdmin", { 
+            expires: new Date(0) 
+        })
         res.json("Sesion Cerrada")
         
     } catch (error) {

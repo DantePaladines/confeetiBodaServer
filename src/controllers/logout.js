@@ -1,7 +1,9 @@
 const Logout = (req, res) => {
     try {
 
-        res.clearCookie("RefreshToken")
+        res.clearCookie("RefreshToken", {
+            expires : new Date(0)
+        })
         res.json("Sesion Cerrada")
         
     } catch (error) {
